@@ -27,8 +27,6 @@ public class Project7 {
 
     @BeforeEach
     public void setUp() {
-        // ChromeOptions options = new ChromeOptions();
-        // options.addArguments("--remote-allow-origins=*");
         driver = new ChromeDriver();
     }
 
