@@ -77,7 +77,7 @@ public class Project7 {
 
         for (String name : names) {
             String name1 = "Открытый вебинар";
-            assertEquals(name, name1);
+            Assertions.assertEquals(name, name1);
         }
     }
 }
