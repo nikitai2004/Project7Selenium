@@ -15,13 +15,13 @@ public class CoursePage extends BasePage {
     @FindBy(xpath = "//p[contains(text(),'Онлайн')]")
     private WebElement formatTest;
 
-    @FindBy(xpath = "//div[@class='sc-1ddwpfq-1 hnlXxp sc-s2pydo-5 iHjMxQ']//p[1]")
+    @FindBy(xpath = "//h1[@class='sc-1og4wiw-0 sc-s2pydo-1 bojQOq diGrSa']//..//div[@class='sc-1og4wiw-0 sc-s2pydo-3 jweyVs dZDxRw']")
     private WebElement descriptionTest;
 
     @FindBy(css = ".sc-x072mc-0.sc-3cb1l3-1.hOtCic.galmep .sc-3cb1l3-3.jeNzke .sc-3cb1l3-4.kGoYMV:first-child")
     private WebElement startFrom;
 
-    @FindBy(css = ".sc-x072mc-0.sc-3cb1l3-1.hOtCic.galmep .sc-3cb1l3-3.jeNzke .sc-3cb1l3-4.kGoYMV:nth-child(2)")
+    @FindBy(css = "div.sc-x072mc-0.sc-3cb1l3-1.hOtCic.galmep > div > div:nth-child(3) > p")
     private WebElement duration;
 
     public CoursePage(WebDriver driver) {
@@ -35,6 +35,7 @@ public class CoursePage extends BasePage {
     public String getDescription() {
         return description.getText();
     }
+
     public String getDescriptionTest() {
         return descriptionTest.getText();
     }

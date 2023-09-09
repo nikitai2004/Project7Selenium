@@ -35,6 +35,8 @@ public class MainPage extends BasePage {
     @FindBy(css = ".dod_new-events-dropdown  >.dod_new-events-dropdown__list > a[href=\"/events/near/open_lesson/\"]")
     private WebElement openWebinar;
 
+    WebDriverWait wait = new WebDriverWait(driver, 5);
+
     public MainPage(WebDriver driver) {
         super(driver);
         for (WebElement element : courses)
@@ -46,30 +48,30 @@ public class MainPage extends BasePage {
         String loc = "div:nth-child(" + el + ")";
         System.out.println("loc =" + loc);
         menu.findElement(By.cssSelector(loc)).click();
-        new WebDriverWait(driver, 5).until(ExpectedConditions.urlContains("catalog/"));
+        wait.until(ExpectedConditions.urlContains("catalog/"));
         return new CatalogPage(driver);
     }
 
     public CalendarEvents menuClickCalendar() {
         teaching.click();
         calendarEvents.click();
-        new WebDriverWait(driver, 10).until(ExpectedConditions.urlContains("events/near/"));
+        wait.until(ExpectedConditions.urlContains("events/near/"));
         return new CalendarEvents(driver);
     }
 
     public CalendarEventsOpenWebinar menuClickCalendarOpenWebinar() {
         teaching.click();
         calendarEvents.click();
-        new WebDriverWait(driver, 10).until(ExpectedConditions.urlContains("events/near/"));
+        wait.until(ExpectedConditions.urlContains("events/near/"));
         allEvents.click();
         openWebinar.click();
-        new WebDriverWait(driver, 10).until(ExpectedConditions.urlContains("near/open_lesson/"));
+        wait.until(ExpectedConditions.urlContains("near/open_lesson/"));
         return new CalendarEventsOpenWebinar(driver);
     }
 
     public AboutUsPage aboutUsClick() {
         aboutUs.click();
-        new WebDriverWait(driver, 10).until(ExpectedConditions.urlContains("about"));
+        wait.until(ExpectedConditions.urlContains("about"));
         return new AboutUsPage(driver);
     }
 

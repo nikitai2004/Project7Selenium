@@ -11,11 +11,11 @@ import java.util.List;
 
 public class CatalogPage extends BasePage {
     @FindBy(css = ".sc-mrx253-0")
-    WebElement buttonMore;
+    private WebElement buttonMore;
 
-    ArrayList<NewCourseCard> cards = new ArrayList<>();
+    public ArrayList<NewCourseCard> cards = new ArrayList<>();
     @FindBy(css = ".sc-18q05a6-1 .sc-zzdkm7-0")
-    List<WebElement> courses ;
+    private List<WebElement> courses ;
 
     public CatalogPage(WebDriver driver) {
         super(driver);

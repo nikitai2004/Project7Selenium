@@ -9,11 +9,6 @@ public abstract class BasePage {
 
     public BasePage(WebDriver driver)  {
         this.driver = driver;
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
         PageFactory.initElements(driver, this);
     }
 }
