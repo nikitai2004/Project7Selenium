@@ -58,11 +58,11 @@ public class Project7Test {
         log.info(" Название = " + page.getTitle());
         log.info(" Описание = " + page.getDescriptionTest());
         log.info(" Формат = " + page.formatTest());
-        Assertions.assertEquals(page.getDuration(), Prop.duration);
-        Assertions.assertEquals(page.getStartFrom(), Prop.startFrom);
-        Assertions.assertEquals(page.getTitle(), Prop.title);
-        Assertions.assertEquals(page.getDescriptionTest(), Prop.description);
-        Assertions.assertEquals(page.formatTest(), Prop.format);
+        Assertions.assertEquals(page.getDuration(), Prop.DURATION.getName());
+        Assertions.assertEquals(page.getStartFrom(), Prop.STARTFROM.getName());
+        Assertions.assertEquals(page.getTitle(), Prop.TITLE.getName());
+        Assertions.assertEquals(page.getDescriptionTest(), Prop.DESCRIPTION.getName());
+        Assertions.assertEquals(page.formatTest(), Prop.FORMAT.getName());
     }
 
     @Test

@@ -1,10 +1,19 @@
 package components;
 
-public final class Prop {
+public enum Prop {
+    DURATION("4 месяца"),
+    STARTFROM("31 августа"),
+    TITLE("QA Engineer. Basic"),
+    DESCRIPTION("Получите навыки тестирования веб-приложений на основе реального проекта наших партнёров."),
+    FORMAT("Онлайн");
 
-    public final static String duration = "4 месяца";
-    public final static String startFrom = "31 августа";
-    public final static String title = "QA Engineer. Basic";
-    public final static String description = "Получите навыки тестирования веб-приложений на основе реального проекта наших партнёров.";
-    public final static String format = "Онлайн";
+    private String name;
+
+    Prop(String name) {
+        this.name = name;
+    }
+
+    public String getName() {
+        return name;
+    }
 }
