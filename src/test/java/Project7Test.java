@@ -27,11 +27,6 @@ public class Project7Test {
         WebDriverManager.edgedriver().setup();
     }
 
-//    @BeforeEach
-//    public void setUp() {
-//        driver = new ChromeDriver();
-//    }
-
     @AfterEach
     public void setDown() {
         if (driver != null) driver.quit();
