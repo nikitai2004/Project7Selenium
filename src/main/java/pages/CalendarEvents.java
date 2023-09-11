@@ -7,9 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-import java.time.Instant;
 import java.time.LocalDate;
-import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Date;
@@ -32,15 +30,12 @@ public class CalendarEvents extends BasePage {
             } else {
                 dat2 = d1.getCardDate() + " " + LocalDate.now().getYear();
             }
-            DateTimeFormatter df = DateTimeFormatter.ofPattern("dd MMMM yyyy")
-                    .withLocale(Locale.forLanguageTag("ru-RU"));
-            LocalDate date2L = LocalDate.parse(dat2, df);
-            ZoneId defaultZoneId = ZoneId.systemDefault();
-            Instant instant = date2L.plusDays(1).atStartOfDay(defaultZoneId).toInstant();
-            Date date2 = Date.from(instant);
-            dates.add(date2);
-            Logger log = LogManager.getLogger(CalendarEvents.class);
-            log.info(" Дата мероприятия = " + date2);
+            DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("dd MMMM yyyy").withLocale(Locale.forLanguageTag("ru-RU"));
+            LocalDate localDate = LocalDate.parse(dat2, dateFormatter).plusDays(1);
+            List<LocalDate> dates = new ArrayList<>();
+            dates.add(localDate);
+            Logger logger = LogManager.getLogger(CalendarEvents.class);
+            logger.info("Дата мероприятия = " + localDate);
         }
     }
 

@@ -4,7 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
 public class NewCourseDate {
-    private WebElement date;
+    private final WebElement date;
 
     public NewCourseDate(WebElement element) {
         date = element;

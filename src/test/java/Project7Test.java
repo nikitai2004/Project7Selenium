@@ -29,8 +29,10 @@ public class Project7Test {
 
     @AfterEach
     public void setDown() {
-        if (driver != null) driver.quit();
-        log.info("Driver closed");
+        if (driver != null) {
+            driver.quit();
+            log.info("Driver closed");
+        }
     }
 
     @Test
@@ -46,7 +48,7 @@ public class Project7Test {
     }
 
     @Test
-    public void test_2_InfoCourseTestCard()  {
+    public void test_2_InfoCourseTestCard() {
         driver = WebDriverFactory.create(WebDriverFactory.DriverManagerType.CHROME);
         assert driver != null;
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);

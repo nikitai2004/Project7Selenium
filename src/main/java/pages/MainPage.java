@@ -15,7 +15,7 @@ public class MainPage extends BasePage {
 
     @FindBy(css = ".sc-gg1znw-0 > div")
     private List<WebElement> courses;
-    private List<CourseCard> cards = new ArrayList<>();
+    private final List<CourseCard> cards = new ArrayList<>();
 
     @FindBy(css = ".sc-pzx9cw-0")
     private WebElement menu;

@@ -11,7 +11,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CalendarEventsOpenWebinar extends BasePage {
-    private final Logger log = LogManager.getLogger(CalendarEventsOpenWebinar.class);
 
     private final ArrayList<String> names = new ArrayList<>();
     @FindBy(css = ".dod_new-type__text")
@@ -19,7 +18,9 @@ public class CalendarEventsOpenWebinar extends BasePage {
 
     public CalendarEventsOpenWebinar(WebDriver driver) {
         super(driver);
-        for (WebElement element : nameEventOpenWebinar) {
+
+        for (WebElement element : this.nameEventOpenWebinar) {
+            Logger log = LogManager.getLogger(CalendarEventsOpenWebinar.class);
             log.info(" Тип мероприятия 2 = " + new NewCourseDateOpenWebinar(element).getNameOpenWebinar());
             names.add(new NewCourseDateOpenWebinar(element).getNameOpenWebinar());
         }
