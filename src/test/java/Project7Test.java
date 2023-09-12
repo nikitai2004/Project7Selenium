@@ -89,7 +89,6 @@ public class Project7Test {
         log.info("Driver started");
         driver.get(settings.get("url"));
         List<String> names = new MainPage(driver).menuClickCalendarOpenWebinar().getNamesOpenWebinar().stream().toList();
-
         for (String name : names) {
             String name1 = "Открытый вебинар";
             Assertions.assertEquals(name, name1);
